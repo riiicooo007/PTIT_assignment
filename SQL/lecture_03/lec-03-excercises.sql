@@ -1,6 +1,6 @@
 .PRAGMA FOREIGN_KEY = ON
 .mode column
-
+.header ON
 --EXERCISE 1. Cho CSDL về phim như bên dưới
 
 --- Movies(title, year, length, genre, studioName, producerC#): Bảng Movie chứa thông tin về các bộ phim
@@ -64,4 +64,10 @@ CREATE TABLE StarsIn (
     FOREIGN KEY (starName) REFERENCES MovieStar(name)
 );
 
+---Import các bảng tương ứng từ file csv
+.import Studio.csv Studio;
+.import MovieExec.csv MovieExec;
+.import MovieStar.csv MovieStar;
+.import Movies.csv Movies;
+.import StarsIn.csv StarsIn;
 
