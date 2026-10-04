@@ -182,3 +182,23 @@ SELECT maker FROM product
 WHERE type='pc';
 
 ---d)
+SELECT hd FROM pc
+group by hd
+HAVING COUNT(distinct model)>=2;
+//Hoặc
+SELECT p1.hd FROM pc p1
+JOIN pc p2 ON p1.hd=p2.hd
+WHERE p1.model<p2.model;
+
+---e)
+SELECT p1.model model_1, p2.model model_2
+FROM pc p1 JOIN pc p2 
+ON p1.ram=p2.ram
+AND p1.speed=p2.speed
+WHERE p1.model<p2.model;
+
+---f)
+SELECT maker FROM product 
+WHERE type IN('pc','laptop') 
+GROUP BY maker 
+HAVING COUNT(model) >=2;
