@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class jav{
+public class J04016{
     static Scanner sc=new Scanner(System.in);
 
     public static class Matrix{
